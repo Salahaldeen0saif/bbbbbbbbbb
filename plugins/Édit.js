@@ -82,7 +82,6 @@ const dir = [
 
 let handler = async (m, { conn }) => { 
 
-m.react('📽️') 
   conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '', m)
 }
 handler.limit = 10;
