@@ -26,7 +26,6 @@ const foot = [
 
 let handler = async (m, { conn }) => { 
 
-m.react('📽️') 
   conn.sendFile(m.chat, foot[Math.floor(Math.random() * foot.length)], 'dedo.webp', '', m)
 }
 handler.limit = 10;
