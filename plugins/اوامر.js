@@ -19,7 +19,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/2e8338d1327f0dc89e36c.mp4';
+let videoUrl = 'https://telegra.ph/file/2ab7b007c1f841f648f5c.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -36,11 +36,11 @@ let readMore = more.repeat(900)
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = `
 *⌞*  ${taguser} *┋ ☀️⌝* _*مرحبا*_
-*🚀✨ المستوى:*${level}
-*💡💼 الخبرة:*${exp}
-*📊🔝 رانك:*${role}
-*☀️🌟ستارك دولار:*${money}
-*🔱🎟️بطاقات:${joincount}*
+*🚀✨ المستوى:* ${level}
+*💡💼 الخبرة:* ${exp}
+*📊🔝 رانك:* ${role}
+*☀️🌟ستارك دولار:* ${money}
+*🔱🎟️بطاقات:* ${joincount}*
 *❇️👨🏻‍🎓بريميوم:* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}
 
 ━━━━━━━━━━━━━━━━━━
