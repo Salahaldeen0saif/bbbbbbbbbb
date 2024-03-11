@@ -34,7 +34,8 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
-let str = `*⌞  ${taguser} ┋ ☀️⌝* _*مرحبا*_
+let str = `
+*⌞  ${taguser} ┋ ☀️⌝* _*مرحبا*_
 *🚀✨ المستوى:*${level}
 *💡💼 الخبرة:*${exp}
 *📊🔝 رانك:*${role}
@@ -144,7 +145,7 @@ conn.sendMessage(m.chat, {
 }; 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = [ 'اوامر'] 
+handler.command = ['اوامر'] 
 
 export default handler
 function clockString(ms) {
