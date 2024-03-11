@@ -35,11 +35,10 @@ let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = `
-*⌞  ${taguser} ┋ ☀️⌝* _*مرحبا*_
+*⌞*  ${taguser} *┋ ☀️⌝* _*مرحبا*_
 *🚀✨ المستوى:*${level}
 *💡💼 الخبرة:*${exp}
 *📊🔝 رانك:*${role}
-*💎💰 الجواهر:*${${limit}
 *☀️🌟ستارك دولار:*${money}
 *🔱🎟️بطاقات:${joincount}*
 *❇️👨🏻‍🎓بريميوم:* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}
