@@ -11,6 +11,12 @@ let wib = moment.tz('Egypt').format('HH:mm:ss')
 //import db from '../lib/database.js'
 
 let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
+await conn.sendMessage(m.chat, {
+   react: {
+ text: "🌟",
+ key: m.key,
+   }
+  })
     let d = new Date(new Date + 3600000)
     let locale = 'ar'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
@@ -90,6 +96,7 @@ let str = `{🛡️𝐌𝐈𝐊𝐄𝐘⊰🕸️⊱𝐁𝐎𝐓🛡️}
 *『🕌↜╎حديث』*
 *『🕌↜╎قران』*
 *『🕌↜╎الله』*
+*『🕌↜╎اذان』*
 *❐═━━━═╊⊰🕸️⊱╉═━━━═❐*
 *˼‏🎮˹ قـسـم الـتـرفـيـه╿↶*
 *⋄━───═◞⬪⋇⬪◟═───━⋄*
@@ -165,6 +172,7 @@ let str = `{🛡️𝐌𝐈𝐊𝐄𝐘⊰🕸️⊱𝐁𝐎𝐓🛡️}
 *『⚜️↜╎ضيف_اكس_بي』*
 *『⚜️↜╎ضيف_جواهر』*
 *⎔ ━─ ─ ╎⊱ ‹🕸️› ⊰ ╎─ ─━ ⎔*
+
 *ملاحظة البوت قيد التطوير و اضافة كل الاوامر*
 
 ඬ⃟ ⚓『𝐌𝐈𝐊𝐄𝐘⊰🕸️⊱𝐁𝐎𝐓』
