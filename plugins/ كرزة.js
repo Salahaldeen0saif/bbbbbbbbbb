@@ -32,12 +32,12 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
     let str = `
 *مرحبا يا,* ${taguser}
-انا مايكي بوت كيف يمكنني مساعدتك 🌚🌹
+انا كرزة بوت كيف يمكنني مساعدتك 🍒
     `.trim();
 
    
-    const imageUrl1 = 'https://telegra.ph/file/6ff310202e6441d4e52bc.jpg';
-    const imageUrl2 = 'https://telegra.ph/file/d7ff406a852930fdeb17d.jpg';
+    const imageUrl1 = 'https://telegra.ph/file/ddd05534a6d105cb49f81.jpg';
+    const imageUrl2 = 'https://telegra.ph/file/1d593cb3500ff76914732.jpg';
     const randomImageUrl = Math.random() < 0.5 ? imageUrl1 : imageUrl2;
 
     conn.sendMessage(m.chat, {
@@ -49,7 +49,7 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = ['مايكي', 'بوت'];
+handler.command = ['كرزة', 'بوت'];
 
 export default handler
 
