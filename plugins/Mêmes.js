@@ -1,9 +1,23 @@
-import axios from "axios"
-let handler = async (m, {command, conn, usedPrefix}) => {
-let res = (await axios.get(`https://raw.githubusercontent.com/socona12/test/main/test.json`)).data  
-let haha = await res[Math.floor(res.length * Math.random())]    
-conn.sendFile(m.chat, haha, 'error.jpg', ``, m)
-}
-handler.command = handler.help = ['ميمز', 'ميم']
-handler.tags = ['anime']
-export default handler
+import axios from 'axios';
+
+let handler = async (m, { conn }) => {
+    let jokes = [
+        "مره واحده حامل ثلاث توائم سألوها إذا بتسمي الأول قالت : سمعت مريم نور بدو يكون اسمو نجم. قالت: ليش ما تسمي التوأم التاني كوكب؟ قالت: إذا جاءنا ولد تالت نسميه كوكب؟",
+        "مرة واحد بلديتنا جاب مروحة ونام جنبها، ليش؟ قال علشان يحلم انه عصفور.",
+        "مرة واحد اشترى عربيه جديدة، فتح باب الشقه عشان يدخلها.",
+        "مرة واحد قال لمراته انا ضيعت المفتاح قالتلو طب افتح بالتاني قالها هو انا بقيت فتاحة علب بيبسي.",
+        "مرة واحد صعيدي دخل الجامعة لأول مرة، سألوه انت ايه؟ قالهم: راسب."
+    ];
+
+    let randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+
+    let jokeMessage = `*نكتة اليوم:*\n${randomJoke}`;
+
+    conn.reply(m.chat, jokeMessage, m);
+};
+
+handler.help = ['joke'];
+handler.tags = ['fun'];
+handler.command = /^(نكتة)$/i;
+
+export default handler;
