@@ -172,18 +172,18 @@ let str = `{🛡️كرزة⊰🍒⊱بوت🛡️}
 *『⚜️↜╎ضيف_اكس_بي』*
 *『⚜️↜╎ضيف_جواهر』*
 
-*⎔ ━─ ─ ╎⊱ ‹🍒› ⊰ ╎─ ─━ ⎔*
+*⎔ ━─ ─ ╎⊱ ‹🍒› ⊰ ╎─ ─━ ⎔*`
 
 
 conn.sendMessage(m.chat, {
-       ` video: { url: videoUrl }, caption: str,
+        video: { url: videoUrl }, caption: str,
   mentions: [m.sender,global.conn.user.jid],
   gifPlayback: true,gifAttribution: 0
     }, { quoted: m });
 }; 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = ['اوامر'] 
+handler.command = ['ايس','كايدو','كرزه'] 
 
 export default handler
 function clockString(ms) {
