@@ -8,20 +8,20 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 
 global.owner = [
-  ['‪212774217717', '☠️ ZORO', true],
-  ['212774217717', ' 3MK 💸', true],
+  ['‪201147144354', '𝑺𝑨𝑳𝑨𝑯', true],
+  ['905350344366', '𝑲𝑨𝑰𝑻𝑶', true],
 ];
 
-global.xaxa = 'kana'
-global.suittag = ['212774217717', '212774217717'];
-global.prems = ['212774217717', '212774217717'];
+global.xaxa = '𝑨$𝑪𝑬'
+global.suittag = ['201147144354'];
+global.prems = ['201147144354'];
 
-global.packname = 'MIKEY-BOT ';
-global.author = '★مايكي-كن★';
-global.wm = '★مايكي-كن★';
-global.titulowm = ' مايكي ';
-global.titulowm2 = ` مايكي `
-global.igfg = ' مايكي ';
+global.packname = '『كرزة⊰🍒⊱بوت』';
+global.author = '★𝑨$𝑪𝑬★';
+global.wm = '★𝑲𝑨𝑰𝑫𝑶★';
+global.titulowm = '𝑺𝑨𝑳𝑨𝑯';
+global.titulowm2 = ` 𝑲𝑨𝑰𝑫𝑶 `
+global.igfg = ' 𝑨$𝑪𝑬 ';
 global.wait = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
@@ -31,7 +31,7 @@ global.imagen4 = fs.readFileSync('./Menu.png');
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
 global.imagen6 = fs.readFileSync('./Menu3.png');
 
-global.mods = ['212774217717'];
+global.mods = ['201147144354'];
 
 //* *******Tiempo***************
 global.d = new Date(new Date + 3600000);
@@ -43,14 +43,14 @@ global.año = d.toLocaleDateString('ar', {year: 'numeric'});
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
 global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 𝙱𝚘𝚝`;
-global.gt = '★مايكي★';
-global.mysticbot = '★مايكي★';
-global.md = 'https://chat.whatsapp.com/FrMwuvNFNOzGt0BqJmMeWJ';
-global.mysticbot = 'https://chat.whatsapp.com/FrMwuvNFNOzGt0BqJmMeWJ';
+global.gt = '★𝑺𝑨𝑳𝑨𝑯★';
+global.mysticbot = '★𝑨$𝑪𝑬★';
+global.md = 'https://wa.me/+201147144354';
+global.mysticbot = 'https://wa.me/+201147144354';
 global.waitt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 global.waittt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 global.waitttt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
-global.nomorown = '22231675561';
+global.nomorown = '201147144354';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
@@ -65,8 +65,8 @@ global.htki = '*⭑•̩̩͙⊱•••• ☪*';
 global.htka = '*☪ ••••̩̩͙⊰•⭑*';
 global.comienzo = '• • ◕◕════';
 global.fin = '════◕◕ • •';
-global.botdate = `⫹⫺ Date :  ${moment.tz('America/Los_Angeles').format('DD/MM/YY')}`; // Asia/Jakarta
-global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${moment.tz('America/Los_Angeles').format('HH:mm:ss')}`;// America/Los_Angeles
+global.botdate = `⫹⫺ Date :  ${moment.tz('Egypt/Cairo').format('DD/MM/YY')}`; // Asia/Jakarta
+global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${moment.tz('Egypt/Cairo').format('HH:mm:ss')}`;// America/Los_Angeles
 global.fgif = {key: {participant: '0@s.whatsapp.net'}, message: {'videoMessage': {'title': wm, 'h': `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./Menu.png')}}};
 global.multiplier = 99;
 global.flaaa = [
