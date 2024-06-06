@@ -183,7 +183,7 @@ conn.sendMessage(m.chat, {
 }; 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = [`'كايدو','اوامر','ايس'] 
+handler.command = ['ايس|كايدو|اوامر'] 
 
 export default handler
 function clockString(ms) {
