@@ -176,14 +176,14 @@ let str = `{🛡️كرزة⊰🍒⊱بوت🛡️}
 
 
 conn.sendMessage(m.chat, {
-        video: { url: videoUrl }, caption: str,
+       ` video: { url: videoUrl }, caption: str,
   mentions: [m.sender,global.conn.user.jid],
   gifPlayback: true,gifAttribution: 0
     }, { quoted: m });
 }; 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = ['ايس'] 
+handler.command = ['اوامر'] 
 
 export default handler
 function clockString(ms) {
