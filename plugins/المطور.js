@@ -25,7 +25,7 @@ await conn.sendMessage(m.chat, {
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/860b7017b0fef1fb46c60.mp4';';
+let videoUrl = 'https://telegra.ph/file/086de8b6c9c8d2f790426.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -40,20 +40,36 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
-let str = `*༺❁━═══⊱𓆩🍒𓆪⊰═══━❁༻*
-*☰ مـعـلـومـات الـمـطـورين↯°*     
-             
- *_⌬ الـلــقــــــب :_*
-*✮ ⃟🛡️╎:「𝑨$𝑪𝑬」*
- *_⌬ الــــــرقـــم :_*
-*✮ ⃟🛡️╎:「 https://wa.me/+201147144354 」*
-_⌬ الـلــقــــــب :_*
-*✮ ⃟🛡️╎:「𝑲𝑨𝑰𝑻𝑶」*
- *_⌬ الــــــرقـــم :_*
-*✮ ⃟🛡️╎:「 https://wa.me/+905350344366 」*
-             `『كايتو⊰🍒⊱عمكم』`
+let str = `*◞♥️بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ♥️◜*
+ *↻╍╍━┛🕋┗━╍╍↺*
+*◞{إِنَّمَا ٱلتَّوۡبَةُ عَلَى ٱللَّهِ لِلَّذِينَ يَعۡمَلُونَ ٱلسُّوٓءَ بِجَهَٰلَةٖ ثُمَّ يَتُوبُونَ مِن قَرِيبٖ فَأُوْلَٰٓئِكَ يَتُوبُ ٱللَّهُ عَلَيۡهِمۡۗ وَكَانَ ٱللَّهُ عَلِيمًا حَكِيمٗا}◜*
+*↻╍╍━┛🕋┗━╍╍↺*
+*◞❐ أهـلا وسـهـلاً بـك يـا ${taguser}
+*◞❐ إسـم الـبـوت ⇠『『كرزة⊰🍒⊱بوت』』◈◜*
+*◞❐ إسـم الـمـنـصـة ⇠『HEROKU』◈◜*
+*◞❐ الـمـطـور ⇠『𝑺𝑨𝑳𝑨𝑯』◈◜*
+*◞❐ عـدد الـمـسـتـخـدمـيـن ${rtotalreg}
+*◞❐ وقـت الـتـشـغـيـل ${uptime}
+*◞❐ الـتـوقـيـت ${date}
+*◞❐ الـإصـدار الـجـديـد ⇠『v.1』◈◜*
 
- *༺❁━══⊱𓆩🍒𓆪⊰═══━❁༻*`
+          *『اوامر⊰🍒⊱كرزة 』*
+
+*⌬─ ─━ ━━ •〘🍒〙• ━━ ━─ ─⌬*
+
+*『•ك1 ⇠ قسم ⊰👥⊱ الجروب』*
+*『•ك2 ⇠ قسم ⊰📿⊱ الدين』*
+*『•ك3 ⇠ قسم ⊰🤖⊱المطور』*
+*『•ك4 ⇠ قسم ⊰⏯️⊱ التحميل』*
+*『•ك5 ⇠ قسم ⊰🎮⊱ الترفيه』*
+*『•ك6 ⇠ قسم ⊰🔄⊱ التحويل』*
+*『•ك7 ⇠ قسم ⊰🔊⊱ الصوتيات』*
+*『•كرزه   ⇠ جميع ⊰🍒⊱ الاقسام』*
+
+*⌬─ ─━ ━━ •〘🍒〙• ━━ ━─ ─⌬*
+
+*◞❐ مـلاحـظـة 🛑 ◈◜*
+*◞❐ يـجـب عـلـيـك كـتـابـة نـقـطـة قـبـل كـل أمـر مـثـل ⇠ 『 .ك1 』◈◜*`
 
 
 conn.sendMessage(m.chat, {
@@ -89,4 +105,4 @@ function clockString(ms) {
         res = "مساء الخير 🌙"
       }
       return res
-      }
+    }
