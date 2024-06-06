@@ -18,6 +18,6 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['joke'];
 handler.tags = ['fun'];
-handler.command = /^(نكتة)$/i;
+handler.command = ['نكته'];
 
 export default handler;
