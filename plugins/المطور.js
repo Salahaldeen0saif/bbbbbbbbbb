@@ -11,6 +11,12 @@ let wib = moment.tz('Egypt').format('HH:mm:ss')
 //import db from '../lib/database.js'
 
 let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
+await conn.sendMessage(m.chat, {
+   react: {
+ text: "😍",
+ key: m.key,
+   }
+  })
     let d = new Date(new Date + 3600000)
     let locale = 'ar'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
@@ -19,7 +25,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/860b7017b0fef1fb46c60.mp4';
+let videoUrl = 'https://telegra.ph/file/860b7017b0fef1fb46c60.mp4';';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -34,7 +40,7 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
-let str = ` 
+let str = `
 *༺❁━═══⊱𓆩🍒𓆪⊰═══━❁༻*
 *☰ مـعـلـومـات الـمـطـورين↯°*     
              
@@ -48,8 +54,8 @@ _⌬ الـلــقــــــب :_*
 *✮ ⃟🛡️╎:「 https://wa.me/+905350344366 」*
              `『كايتو⊰🍒⊱عمكم』`
 
- *༺❁━══⊱𓆩🍒𓆪⊰═══━❁༻*
-‬`.trim();
+ *༺❁━══⊱𓆩🍒𓆪⊰═══━❁༻*`
+
 
 conn.sendMessage(m.chat, {
         video: { url: videoUrl }, caption: str,
