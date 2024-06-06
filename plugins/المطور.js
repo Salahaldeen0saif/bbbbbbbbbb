@@ -19,7 +19,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/9d56aa21a41402e454de8.mp4';
+let videoUrl = 'https://telegra.ph/file/860b7017b0fef1fb46c60.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -35,19 +35,20 @@ let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = ` 
-*༺❁━═══⊱𓆩⛩️𓆪⊰═══━❁༻*
-*☰ مـعـلـومـات الـمـطـور↯°*     
+*༺❁━═══⊱𓆩🍒𓆪⊰═══━❁༻*
+*☰ مـعـلـومـات الـمـطـورين↯°*     
              
  *_⌬ الـلــقــــــب :_*
-*✮ ⃟🛡️╎:「𝙕𝙊𝙍𝙊」*
+*✮ ⃟🛡️╎:「𝑨$𝑪𝑬」*
  *_⌬ الــــــرقـــم :_*
-*✮ ⃟🛡️╎:「 https://wa.me/+212778558097 」*
+*✮ ⃟🛡️╎:「 https://wa.me/+201147144354 」*
+_⌬ الـلــقــــــب :_*
+*✮ ⃟🛡️╎:「𝑲𝑨𝑰𝑻𝑶」*
+ *_⌬ الــــــرقـــم :_*
+*✮ ⃟🛡️╎:「 https://wa.me/+905350344366 」*
+             `『كايتو⊰🍒⊱عمكم』`
 
-*✮ ⃟🛡️╎:「 https://wa.me/+212774217717 」*
- *_⌬ انـســـتـــــا :_*
-*✮ ⃟🛡️╎:「 https://www.instagram.com/tweets._.zahir?igsh=cDRqcWQ5cTc1dDJz 」*
-
- *༺❁━══⊱𓆩⛩️𓆪⊰═══━❁༻*
+ *༺❁━══⊱𓆩🍒𓆪⊰═══━❁༻*
 ‬`.trim();
 
 conn.sendMessage(m.chat, {
