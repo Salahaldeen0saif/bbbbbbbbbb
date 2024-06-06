@@ -1,22 +1,3 @@
-
-Navigation Menu
-
-Code
-Pull requests
-Actions
-Breadcrumbsbbbbbbbbbb/plugins
-/البوت.js
-Latest commit
-Salahaldeen0saif
-Salahaldeen0saif
-1 hour ago
-History
-108 lines (98 loc) · 4.57 KB
-File metadata and controls
-
-Code
-
-Blame
 let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
 import { createHash } from 'crypto'
 import { canLevelUp, xpRange } from '../lib/levelling.js'
