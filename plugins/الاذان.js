@@ -6,7 +6,7 @@ let handler = async (m, {
     usedPrefix,
     command
 }) => {
-if (!text) throw `ضع اسم دولتك بي الإنجليزية متال: \n ${usedPrefix + command} Morocco`
+if (!text) throw `ضع اسم دولتك بي الإنجليزية متال: \n ${usedPrefix + command} sudan`
     try {
             let res = await fetchPrayerTimes(text)
             m.reply(`${Object.entries(res).map(([name, data]) => `صلاة *${name}* : ${data}`).join('\n').trim()}`.trim())
