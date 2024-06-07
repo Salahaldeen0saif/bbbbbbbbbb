@@ -25,7 +25,7 @@ await conn.sendMessage(m.chat, {
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/086de8b6c9c8d2f790426.mp4';
+let videoUrl = 'https://telegra.ph/file/4c0500dafa8abb780e00d.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -42,23 +42,23 @@ let readMore = more.repeat(900)
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = `
        *❐═━━━═╊⊰🍒⊱╉═━━━═❐* 
-        *_🔃|『قسم⊰🔄⊱التحزيل』|🔃_*
+        *_🔃|『قسم⊰🔄⊱التحويل』|🔃_*
        *⋄━───═◞⬪🍒⬪◟═───━⋄*
 *『🔄↜╎سرقة』*
 *『🔄↜╎لفيديو』*
 *『🔄↜╎لصورة』*
 *『🔄↜╎لانمي』*
 *『🔄↜╎تخيل』*
-*『🔄↜╎شغل』*
+*『🔄↜╎مكس』*
 *『🔄↜╎لجواهر』*
 *『🔄↜╎ستك』*
 *『🔄↜╎تلجراف』*
 *『🔄↜╎لكرتون』*
 *『🔄↜╎باركود』*
-*『🔄↜╎ميسي』*
-*『🔄↜╎المنتهي』*
 
-       *❐═━━━═╊⊰🍒⊱╉═━━━═❐*`
+       *❐═━━━═╊⊰🍒⊱╉═━━━═❐*
+                 *_『كرزة⊰🍒⊱بوت』_*
+       `
 
 
 conn.sendMessage(m.chat, {
