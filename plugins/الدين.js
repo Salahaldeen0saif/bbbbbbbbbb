@@ -25,7 +25,7 @@ await conn.sendMessage(m.chat, {
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/086de8b6c9c8d2f790426.mp4';
+let videoUrl = 'https://telegra.ph/file/7d3acd69df5f3ad724226.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -50,7 +50,9 @@ let str = `
 *『🕌↜╎الله』*
 *『🕌↜╎الأذان』*
 
-       *❐═━━━═╊⊰🍒⊱╉═━━━═❐*`
+       *❐═━━━═╊⊰🍒⊱╉═━━━═❐*
+                *_『كرزة⊰🍒⊱بوت』_*
+       `
 
 
 conn.sendMessage(m.chat, {
