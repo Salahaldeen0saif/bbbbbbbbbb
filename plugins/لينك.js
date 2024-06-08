@@ -17,7 +17,7 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['Link']
 handler.tags = ['group']
 handler.command = ['link', 'لينك'] 
-handler.Admin = true
+handler.reowner= true
 handler.group = false 
 
 export default handler
