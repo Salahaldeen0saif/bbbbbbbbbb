@@ -45,7 +45,7 @@ global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.
 
 global.timestamp = {start: new Date};
 global.videoList = [];
-global.videoListXXX = [];
+global.videoListt = [];
 
 const __dirname = global.__dirname(import.meta.url);
 
@@ -144,23 +144,23 @@ const connectionOptions = {
 global.conn = makeWASocket(connectionOptions);
 
     if (pairingCode && !conn.authState.creds.registered) {
-        if (useMobile) throw new Error('Can t use a pairing code with the Mobile API')
+        if (useMobile) throw new Error('لا يمكن استخدام رمز الاقتران مع Mobile API')
 
         let numeroTelefono
         if (!!phoneNumber) {
             numeroTelefono = phoneNumber.replace(/[^0-9]/g, '')
 
             if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
-                console.log(chalk.bgBlack(chalk.redBright("Start with the country code of your WhatsApp number.\nExample: +22247072475")))
+                console.log(chalk.bgBlack(chalk.redBright("*ابدأ برمز البلد الخاص برقم واتساب الخاص بك.\nمثال:+201147144354*")))
                 process.exit(0)
             }
         } else {
-            numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`Please write your WhatsApp number.\nExample:+22247072475 : `)))
+            numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`*من فضلك اكتب رقم الواتساب الخاص بك.\nمثال:+201147144354*`)))
             numeroTelefono = numeroTelefono.replace(/[^0-9]/g, '')
             if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
-                console.log(chalk.bgBlack(chalk.redBright("Start with the country code of your WhatsApp number.\nExample: +22247072475")))
+                console.log(chalk.bgBlack(chalk.redBright("*ابدأ برمز البلد الخاص برقم الواتساب الخاص بك.\nمثال: +201147144354*")))
 
-                numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`Please write your WhatsApp number.\nExample: +22247072475 : `)))
+                numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`*من فضلك اكتب رقم الواتساب الخاص بك.\nمثال: +201147144354*`)))
                 numeroTelefono = numeroTelefono.replace(/[^0-9]/g, '')
                 rl.close()
             }
@@ -228,7 +228,7 @@ unlinkSync(`./jadibts/${directorio}/${fileInDir}`)
 })
 if (SBprekey.length === 0) return; 
 } catch (err) {
-console.log(chalk.bold.red(`[😔] Something went wrong during deletion, files not deleted`))
+console.log(chalk.bold.red(`[😔]_حدث خطأ ما أثناء الحذف, لم يتم حذف الملفات _`))
 }}
 
 function purgeOldFiles() {
@@ -263,36 +263,36 @@ async function connectionUpdate(update) {
   }
   if (global.db.data == null) loadDatabase();
   if (update.qr != 0 && update.qr != undefined) {
-    console.log(chalk.yellow('[😉] Scan the QR code or enter the pairing code in WhatsApp.'));
+    console.log(chalk.yellow('[😉] _امسح رمز الاستجابة السريعة ضوئيًا أو أدخل رمز الاقتران في الواتساب_'));
   }
   if (connection == 'open') {
-    console.log(chalk.yellow('[🌟] Connected successfully.'));
+    console.log(chalk.yellow('[🍒] تم الاتصال بنجاح.'));
   }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
 if (connection === 'close') {
     if (reason === DisconnectReason.badSession) {
-        conn.logger.error(`[ ⚠ ]Incorrect session, please delete the folder ${global.authFile} and scan again.`);
+        conn.logger.error(`[ ⚠️ ]جلسة غير صحيحة, يرجى حذف المجلد ${global.authFile} والمسح مرة أخرى.`);
         //process.exit();
     } else if (reason === DisconnectReason.connectionClosed) {
-        conn.logger.warn(`[ ⚠ ] Connection closed, reconnecting...`);
+        conn.logger.warn(`[ ⚠️ ] تم غلق الاتصال, جاري اعادة الاتصال...`);
         await global.reloadHandler(true).catch(console.error);
     } else if (reason === DisconnectReason.connectionLost) {
-        conn.logger.warn(`[ ⚠ ] Lost connection to the server, reconnecting...`);
+        conn.logger.warn(`[ ⚠️ ] فقدت الاتصال بالخادم, جاري اعادة الاتصال...`);
         await global.reloadHandler(true).catch(console.error);
     } else if (reason === DisconnectReason.connectionReplaced) {
-        conn.logger.error(`[ ⚠ ] Connection replaced, another new session has been opened. Please log out of the current session first.`);
+        conn.logger.error(`[ ⚠️ ] تم استبدال الاتصال, تم فتح جلسة جديدة أخرى. الرجاء تسجيل الخروج من الجلسة الحالية أولا.`);
         //process.exit();
     } else if (reason === DisconnectReason.loggedOut) {
-        conn.logger.error(`[ ⚠ ] Connection closed, please delete the folder ${global.authFile} and scan again.`);
+        conn.logger.error(`[ ⚠️ ] تم غلق الاتصال, يرجى حذف المجلد ${global.authFile} والمسح مرة أخرى.`);
         //process.exit();
     } else if (reason === DisconnectReason.restartRequired) {
-        conn.logger.info(`[ ⚠ ] Reboot required, restart the server if you have any problems.`);
+        conn.logger.info(`[ ⚠️ ] مطلوب اعادة التشغيل, أعد تشغيل الخادم إذا كان لديك أي مشاكل.`);
         await global.reloadHandler(true).catch(console.error);
     } else if (reason === DisconnectReason.timedOut) {
-        conn.logger.warn(`[ ⚠ ] Connection timed out, reconnecting...`);
+        conn.logger.warn(`[ ⚠️ ] انتهت مدة الاتصال, جاري اعادة الاتصال...`);
         await global.reloadHandler(true).catch(console.error);
     } else {
-        conn.logger.warn(`[ ⚠ ] Unknown disconnection reason. ${reason || ''}: ${connection || ''}`);
+        conn.logger.warn(`[ ⚠️ ] سبب انقطاع الاتصال غير معروف. ${reason || ''}: ${connection || ''}`);
         await global.reloadHandler(true).catch(console.error);
     }
 }
@@ -329,15 +329,15 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '👋 ة¡منور!\n@user';
-  conn.bye = '👋 ¡نراك لاحقا!\n@user';
-  conn.spromote = '*[ ℹ️ ] @user اصبح مشرفا*';
-  conn.sdemote = '*[ ℹ️ ] @user لم يعد مشرفا.*';
-  conn.sDesc = '*[ ℹ️ ] تم تغيير وصف لمجموعة.*';
-  conn.sSubject = '*[ ℹ️ ] تم تغيير اسم المجموعة.*';
-  conn.sIcon = '*[ ℹ️ ] تم تغيير خلفية المجموعة.*';
-  conn.sRevoke = '*[ ℹ️ ] تم تغيير رابط المممجموعة.*';
-
+  conn.welcome = '*⦓          ⦓_『كرزة⊰🍒⊱بوت』_⦔          ⦔*\n*❤️ꪶ→ @subject*\n*🍀ꪶ→ @user*\n*💢ꪶ→مـرحـبـاً بـك فـي جـروبـنـا الـمتوضـع اتـمـنـي أن يـعـجـبـك*\n*💠ꪶ→ *اقـرا الوصف\n*⦓          ⦓🍒⦔          ⦔*\n المجموعه:*\n\n@desc\n\n*⦓          ⦓_『كرزة⊰🍒⊱بوت』_⦔          ⦔*';
+  conn.bye = '*⦓          ⦓_『كرزة⊰🍒⊱بوت』_⦔          ⦔*\n*🔄ꪶ→ @user*\n*ꪶ→ غادر المجموعه 💯*\n*⦓          ⦓_『كرزة⊰🍒⊱بوت』_⦔          ⦔**';
+  conn.spromote = '*[ 📌 ] @user تمت ترقيته إلى المسؤول.*';
+  conn.sdemote = '*[ 📌 ] @user تم تخفيض رتبته من المسؤول.*';
+  conn.sDesc = '*[ 📌 ] تم تعديل وصف المجموعه.*';
+  conn.sSubject = '*[ 📌 ] تم تغيير اسم المجموعة.*';
+  conn.sIcon = '*[ 📌 ] تم تغيير صورة الملف الشخصي للمجموعة.*';
+  conn.sRevoke = '*[ 📌 ] تمت إعادة تعيين رابط دعوة المجموعة.*';
+  
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
   conn.groupsUpdate = handler.groupsUpdate.bind(global.conn);
@@ -490,7 +490,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `_『كرزة⊰🍒⊱بوت』_ [ ⏳ ] Uptime: ${uptime}`;
+  const bio = `*_『كرزة⊰🍒⊱بوت』_* [ ⏳ ] Uptime: ${uptime}`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {
