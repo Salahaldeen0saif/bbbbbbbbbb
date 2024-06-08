@@ -23,11 +23,12 @@ var user = number + '@s.whatsapp.net'
 conn.groupParticipantsUpdate(m.chat, [user], 'promote')
 conn.reply(m.chat, ``, m)
 }}
-handler.help = ['*201063720595xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'promote ' + v)
+handler.help = ['*201147144354xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'promote ' + v)
 handler.tags = ['group']
-handler.command = /^(ترقيه)$/i
+handler.command = /^(ترقيه|ترقية)$/i
 handler.group = true
 handler.rowner = true
 handler.botAdmin = true
+handler.Admin = true
 handler.fail = null
 export default handler
