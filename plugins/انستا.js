@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 const handler = async (m, { conn, args }) => {
     if (!args[0]) {
-        throw `_⚠️ من فضلك, أدخل رابط Instagram._`;
+        throw `_⚠️ من فضلك, أرسل رابط Instagram._`;
     }
 if (!args[0].match(/instagram/gi))
     throw `_❌تأكد من أن الرابط من Instagram_`;
