@@ -26,7 +26,7 @@ conn.reply(m.chat, ``, m)
 handler.help = ['*201147144354xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'promote ' + v)
 handler.tags = ['group']
 handler.command = /^(ترقيه|ترقية)$/i
-handler.group = true
+handler.group = false 
 handler.Admin = true
 handler.botAdmin = true
 handler.fail = null
