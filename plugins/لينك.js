@@ -15,9 +15,9 @@ let handler = async (m, { conn, args }) => {
     await conn.sendNyanCat(m.chat, 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), await (await fetch(pp)).buffer(), `${groupMetadata.subject}`, null, 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), m)
 }
 handler.help = ['Link']
-handler.tags = ['owner']
+handler.tags = ['group']
 handler.command = ['link', 'لينك'] 
-handler.reowner= true
+handler.rowner= true
 handler.Admin = true 
 
 export default handler
