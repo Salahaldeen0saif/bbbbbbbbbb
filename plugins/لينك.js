@@ -18,5 +18,6 @@ handler.help = ['Link']
 handler.tags = ['group']
 handler.command = ['link', 'لينك'] 
 handler.Admin = true
+handler.group = false 
 
 export default handler
