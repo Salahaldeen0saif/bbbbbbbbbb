@@ -6,7 +6,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const groupAdmins = participants.filter(p => p.admin)
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
-    let text = `
+    let text = `*⌬─ ─━ ━━ •〘🍒〙• ━━ ━─ ─⌬*
 *✦⌈⇖ مــعـلــومـات الــجـروب ⇘⌋✦*
 
 *❖↫ الــأسـم : ${groupMetadata.subject}* 
@@ -17,6 +17,8 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 
 *❖↫ الــمشـرفــين :*
  ${listAdmin}
+ 
+*⌬─ ─━ ━━ •〘🍒〙• ━━ ━─ ─⌬*
 
 ❖↫ *تــكـويـن الــمـجمـوعـه :*
 *• ${isBanned ? '✅' : '❎'} الــحـظـر*
@@ -25,6 +27,8 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 *• ${del ? '❎' : '✅'} الــحذف*
 *• ${antiLink ? '✅' : '❎'} حــذف الـروابــط*
 
+*⌬─ ─━ ━━ •〘🍒〙• ━━ ━─ ─⌬*
+
 *❖↫ إعــدادات الــرسـالـه :*
 *• الــتـرحـيب:* ${sWelcome}
 *• الـوداع:* ${sBye}
@@ -32,7 +36,10 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 *• الــاعـفاء:* ${sDemote}
 
 *❖↫ الــوصــف :*
-${groupMetadata.desc?.toString() || '*لــا يـوجـد وصــف !*'}
+${groupMetadata.desc?.toString() || '*لــا يـوجـد وصــف !*} 
+
+  *⌬─ ─━ ━━ •〘🍒〙• ━━ ━─ ─⌬*
+            *_『كرزة⊰🍒⊱بوت』_*
 `.trim()
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
