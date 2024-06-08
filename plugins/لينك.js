@@ -1,16 +1,22 @@
-import fs from 'fs';
-const handler = async (m, {conn, args}) => {
-  const group = m.chat;
-  conn.reply(m.chat, 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), m, {
-    contextInfo: {externalAdReply: {mediaUrl: null, mediaType: 1, description: null,
-      title: 'لينك الجروب',
-      body: 'VENOM 𝐵𝛩𝑇',
-      previewType: 0, thumbnail: fs.readFileSync('./Menu.jpg'),
-      sourceUrl: `https://chat.whatsapp.com/Bu7cwDjLYwLJ93yyUD1tE1`}}});
-};
-handler.help = ['linkgroup'];
-handler.tags = ['group'];
-handler.command = /^لينك|link(gro?up)?$/i;
-handler.group = true;
-handler.botAdmin = true;
-export default handler;
+import { areJidsSameUser } from '@whiskeysockets/baileys'
+import fetch from 'node-fetch' 
+let handler = async (m, { conn, args }) => {
+    let group = m.chat
+    if (/^[0-9]{5,16}-?[0-9]+@g\.us$/.test(args[0])) group = args[0]
+    if (!/^[0-9]{5,16}-?[0-9]+@g\.us$/.test(group)) throw '⚠️ لا يمكن استخدام هذا الامر إلا في المجموعات'
+    let pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || './src/avatar_contact.png'
+    let groupMetadata = await conn.groupMetadata(group)
+    if (!groupMetadata) throw 'بيانات تعريف المجموعة غير محددة :\\'
+    if (!('participants' in groupMetadata)) throw 'لم يتم تعريف المشاركين :('
+    let me = groupMetadata.participants.find(user => areJidsSameUser(user.id, conn.user.id))
+    if (!me) throw '✳️ أنا لست في تلك المجموعة :('
+    if (!me.admin) throw '✳️ البوت ليس مسؤول'
+    await conn.reply(m.chat, global.wait, m)
+    await conn.sendNyanCat(m.chat, 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), await (await fetch(pp)).buffer(), `${groupMetadata.subject}`, null, 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), m)
+}
+handler.help = ['Link']
+handler.tags = ['group']
+handler.command = ['link', 'لينك'] 
+
+
+export default handler
