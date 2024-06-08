@@ -8,7 +8,7 @@ let handler = async (m, {
     text,
     command
 }) => {
-            if (!text) return m.reply("هذا الامر خاص بالبحث عن المواضيع في ويكيبيديا نكتب هكذا \n*.wiki العدالة*")
+            if (!text) return m.reply("هذا الامر خاص بالبحث عن الانميات في ويكيبيديا نكتب هكذا \n*.انمي اتاك*")
             await m.reply(wait)
             try {
                 let item = await Wiki(text)
@@ -25,7 +25,7 @@ let handler = async (m, {
 }
 handler.help = ["wiki"]
 handler.tags = ["search"]
-handler.command = /^(ويكي)$/i
+handler.command = /^(انمي)$/i
 export default handler
 
 /* New Line */
