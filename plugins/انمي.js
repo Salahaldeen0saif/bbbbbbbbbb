@@ -2,7 +2,7 @@ import translate from '@vitalets/google-translate-api'
 import { Anime } from "@shineiichijo/marika"
 const client = new Anime();
 let handler = async(m, { conn, text, usedPrefix }) => {
-if (!text) return m.reply(`*[🙄] *monster اكتب اسم الانمي الي تبغاه مثال انمي* `)
+if (!text) return m.reply(`*[🙄] * اكتب اسم الانمي الي تبغاه مثال:.ون بيس* `)
 try {  
 let anime = await client.searchAnime(text)
 let result = anime.data[0];
@@ -29,5 +29,5 @@ conn.sendFile(m.chat, result.images.jpg.image_url, 'error.jpg', AnimeInfo, m)
 } catch {
 throw `*[❗] خطأ، حاول مرة أخرى*`  
 }}
-handler.command = /^(anime|انمي)$/i
+handler.command = /^(anime|أنمي)$/i
 export default handler 
