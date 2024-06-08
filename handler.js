@@ -1183,7 +1183,7 @@ const messageText = `
  ❰ ⚠️ ❱ *USER BANNED!* ❰ ⚠️ ❱
 —◉ *Notice ${messageNumber}/3 (Total: 3)*
 —◉ Reason ${user.bannedReason ? `\n*:* ${user.bannedReason}` : '*Reason:* Unspecified'}
-—◉ *إذا كنت تعتقد أن هذا خطأ ولديك دليل، فيمكنك الاتصال بمالك الروبوت لاستئناف التعليق.* —◉ *التواصل مع مالكه:* 212 wa.me/212774217717
+—◉ *إذا كنت تعتقد أن هذا خطأ ولديك دليل، فيمكنك ان اذهب النوم وتبكي مطوري لا يخطأ.* —◉ *التواصل مع المطور:* 212 wa.me/201147144354
 ╚═════════════════════╝
                `.trim();
               m.reply(messageText);
@@ -1266,11 +1266,11 @@ const messageText = `
           m.exp += xp;
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] لقد نفد الماس الخاص بك، يمكنك شراء المزيد باستخدام الأمر: ${usedPrefix}buyall*`, m);
+          mconn.conn.reply(m.chat, `*[ ℹ️ ] لقد نفد الماس الخاص بك، يمكنك شراء المزيد باستخدام الأمر: ${usedPrefix}شراء*`, m);
           continue; 
         }
         if (plugin.level > _user.level) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] It is required to have the level ${plugin.level}  to be able to use the command. Your current level is${_user.level},use the command  ${usedPrefix}lvl to raise your level with XP.*`, m);
+          mconn.conn.reply(m.chat, `*[ ℹ️ ] يشترط أن يكون المستوى ${plugin.level}  لتتمكن من استخدام الأمر.مستواك الحالي هو${_user.level},استخدم الامر  ${usedPrefix}لفل لرفع مستواك مع XP.*`, m);
           continue; 
         }
         const extra = {
@@ -1339,7 +1339,7 @@ const messageText = `
             }
           }
           if (m.limit) {
-            m.reply('*[ 💎 ] Will be used' + +m.limit + ' diamond(s) (limits).*');
+            m.reply('*[ 💎 ] سيتم استخدام' + +m.limit + ' diamond(s) (limits).*');
           }
         }
         break;
@@ -1440,7 +1440,7 @@ export async function participantsUpdate({id, participants, action}) {
               const responseb = await m.conn.groupParticipantsUpdate(id, [user], 'remove');
               if (responseb[0].status === '404') return;
               const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-              await m.conn.sendMessage(id, {text: `*[❗] @${user.split('@')[0]} IN THIS GROUP ARE NOT ALLOWED ARABIC OR RARE NUMBERS, FOR WHAT WILL BE TAKEN OUT OF YOU GROUPS*`, mentions: [user]}, {quoted: fkontak2});
+              await m.conn.sendMessage(id, {text: `*[❗] @${user.split('@')[0] في هذه المجموعة غير مسموح بالأرقام المغربية أو الوهمية, لذلك سيتم إخراجك من المجموعة*`, mentions: [user]}, {quoted: fkontak2});
               return;
             }
             await m.conn.sendFile(id, apii.data, 'pp.jpg', text, null, false, {mentions: [user]});
@@ -1451,12 +1451,12 @@ export async function participantsUpdate({id, participants, action}) {
     case 'promote':
     case 'daradmin':
     case 'darpoder':
-      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```');
+      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```لقد اصبح مشرفا```');
     case 'demote':
     case 'quitarpoder':
     case 'quitaradmin':
       if (!text) {
-        text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```');
+        text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```لم يعد مشؤفا```');
       }
       text = text.replace('@user', '@' + participants[0].split('@')[0]);
       if (chat.detect && !chat?.isBanned) {
@@ -1481,10 +1481,10 @@ export async function groupsUpdate(groupsUpdate) {
     if (groupUpdate.subjectTime) continue;
     const chats = global.db.data.chats[id]; let text = '';
     if (!chats?.detect) continue;
-    if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc);
-    if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject);
-    if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon);
-    if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke);
+    if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```تم تغيير الوصف إلى```\n@desc').replace('@desc', groupUpdate.desc);
+    if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```تم تغيير الاسم إلى```\n@subject').replace('@subject', groupUpdate.subject);
+    if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```تم تغيير الافتار إلى```').replace('@icon', groupUpdate.icon);
+    if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```تم تغيير رابط المجموعة إلى```\n@revoke').replace('@revoke', groupUpdate.revoke);
     if (!text) continue;
     await mconn.conn.sendMessage(id, {text, mentions: mconn.conn.parseMention(text)});
   }
@@ -1535,16 +1535,16 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مالك الروبوت.*',
-    owner: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مالك الروبوت.*',
-    mods: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل المشرفين ومالك الروبوت.*',
-    premium: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل المستخدمين المميزين ومالك الروبوت.*',
+    rowner: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مطوري.*',
+    owner: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مطوري.*',
+    mods: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل المشرفين ومطوري.*',
+    premium: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل المستخدمين المميزين ومطوري.*',
     group: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا في المجموعات.*',
-    private: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا في الدردشة الخاصة للروبوت.*',
+    private: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا في الدردشة الخاصة للبوت.*',
     admin: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مسؤولي المجموعة.*',
-    botAdmin: '*[ ℹ️ ] لاستخدام هذا الأمر، من الضروري أن يكون الروبوت مسؤولا عن المجموعة.*',
-    unreg: '*[ ℹ️ ] لاستخدام هذا الأمر، يجب أن تكون مسجلا.*\n\n*[ 💡 ] Use the command:* _#verify name.age_ *to register.*',
-    restrict: '*[ ℹ️ ] تم تعطيل هذا الأمر من قبل مالك الروبوت.*',
+    botAdmin: '*[ ℹ️ ] لاستخدام هذا الأمر، من الضروري أن يكون البوت مسؤولا عن المجموعة.*',
+    unreg: '*[ ℹ️ ] لاستخدام هذا الأمر، يجب أن تكون مسجلا.*\n\n*[ 💡 ] استخدم الامر:* _تسجيل اللقب.العمر_ *للتسجيل.*',
+    restrict: '*[ ℹ️ ] تم تعطيل هذا الأمر من قبل مطوري.*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
   const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Warning*', body: 'JOHAN-BOT', thumbnail: imagen1, sourceUrl: 'https://chat.whatsapp.com/CjPwuDRKkUBQut8Pfkla'}}}}, aa);
