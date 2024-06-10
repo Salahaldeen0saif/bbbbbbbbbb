@@ -1,16 +1,47 @@
-let handler = async (m, { conn, usedPrefix, command }) => {	
-if (!m.quoted) throw `*❮ ❗┇يجب ان تضع ريبلاي للرسالة الذي تريد حذفها❯*`
+let handler = async (m, { conn, usedPrefix, command }) => {
+
+if (!m.quoted) throw `*❗❗قم بالرد على الرسالة التي تريد حذفها*`
+
 try {
-let delet = m.message.extendedTextMessage.contextInfo.participant
-let bang = m.message.extendedTextMessage.contextInfo.stanzaId
-return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: bang, participant: delet }})
+
+let key = {}
+
+try {
+
+key.remoteJid = m.quoted ? m.quoted.fakeObj.key.remoteJid : m.key.remoteJid
+
+key.fromMe = m.quoted ? m.quoted.fakeObj.key.fromMe : m.key.fromMe
+
+key.id = m.quoted ? m.quoted.fakeObj.key.id : m.key.id
+
+key.participant = m.quoted ? m.quoted.fakeObj.participant : m.key.participant
+
+} catch (e) {
+
+console.error(e)
+
+}
+
+return conn.sendMessage(m.chat, { delete: key })
+
 } catch {
+
 return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
-}}
-handler.help = ['del', 'delete']
+
+}
+
+}
+
+handler.help = ['delete']
+
 handler.tags = ['group']
-handler.command = /^حذف|احذف?$/i
-handler.group = true
+
+handler.command = /^حذف$/i
+
+handler.group = false
+
 handler.admin = true
+
 handler.botAdmin = true
+
 export default handler
