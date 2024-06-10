@@ -36,7 +36,7 @@ ${arr.slice(6).join('')}
 ▢ *Room ID* ${room.id}
 
 ❏ *القوانين*
-‣ اصنع 3 صفوف من الرموز عموديا, أفقيا او انحرافي للفوز ‣ اكتب *surrender* للانسحاب
+‣ اصنع 3 صفوف من الرموز عموديا, أفقيا او انحرافي للفوز ‣ اكتب *كنسل* للانسحاب
 `.trim()
         if (room.x !== room.o) await conn.reply(room.x, str, m, {
             mentions: conn.parseMention(str)
@@ -54,7 +54,7 @@ ${arr.slice(6).join('')}
         }
         if (text) room.name = text
 
-     conn.reply(m.chat, `❏ *توقع الشريك*\nاكتب الامر التالي للدخول في نفس الجيم
+     conn.reply(m.chat, `❏ *توقع الشريك*\nاكتب الامر التالي للدخول في نفس الغرفة
 ❏ *${usedPrefix + command} ${text}*
 
 ❏ *الجائزه: 4999* اكس بي`, m, {
