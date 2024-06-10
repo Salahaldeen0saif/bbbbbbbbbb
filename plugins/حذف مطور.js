@@ -1,20 +1,31 @@
-let handler = async (m, { conn, text }) => {
-    let who
-    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text
-    else who = m.chat
-    if (!who) throw 'قم بالاشارة للشخص الذي ازالتت من ملكية البوت'
-    if (!global.owner.includes(who.split`@`[0])) throw 'تمت ازالته من ملكية البوت ♥!'
-    let index = global.owner.findIndex(v => (v.replace(/[^0-9]/g, '') + '@s.whatsapp.net') === (who.replace(/[^0-9]/g, '') + '@s.whatsapp.net'))
-    global.owner.splice(index, 1)
-    const caption = `ا @${who.split`@`[0]} تم اعتباره من الان فصاعدا ليس مالكا للبوت ♥`
-    await conn.reply(m.chat, caption, m, {
-        mentions: conn.parseMention(caption)
-    });
-}
-handler.help = ['delowner']
-handler.tags = ['owner']
-handler.command = /^صلصة$/i
 
-handler.owner = true
+const handler = async (m, { conn, text, args, usedPrefix, command }) => {
+  const datas = global
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.plugins.owner_add_del_owner
 
-export default handler
+  const why = `${tradutor.texto1[0]} ${usedPrefix + command} @${m.sender.split('@')[0]}*\n*◉ ${usedPrefix + command} ${m.sender.split('@')[0]}*\n*◉ ${usedPrefix + command} ${tradutor.texto1[0]}`;
+  const who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : false;
+  if (!who) return conn.reply(m.chat, why, m, {mentions: [m.sender]});
+  switch (command) {
+    case 'addowner':
+      const nuevoNumero = who;
+      global.owner.push([nuevoNumero]);
+      await conn.reply(m.chat, tradutor.texto2, m);
+      break;
+    case 'delowner':
+      const numeroAEliminar = who;
+      const index = global.owner.findIndex(owner => owner[0] === numeroAEliminar);
+      if (index !== -1) {
+        global.owner.splice(index, 1);
+        await conn.reply(m.chat, tradutor.texto3, m);
+      } else {
+        await conn.reply(m.chat, tradutor.texto4, m);
+      }
+      break;
+  }
+};
+handler.command = /^(addowner|delowner)$/i;
+handler.rowner = true;
+export default handler;
