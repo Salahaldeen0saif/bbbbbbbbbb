@@ -1,7 +1,7 @@
 import translate from '@vitalets/google-translate-api'
 import fetch from 'node-fetch'
 let handler = async (m, { args, usedPrefix, command }) => {
-let msg = `*⚠️ لاستخدام الامر بشكل صحيح ${usedPrefix + command} (idioma) (texto)*\n*📌 مثال:*\n*${usedPrefix + command} ar Hi brother*\n\n*`
+let msg = `*⚠️ استخدام الامر بشكل صحيح ${usedPrefix + command} (اللغة) (النص)*\n*📌 مثال:*\n*${usedPrefix + command} ar Hi brother*`
 if (!args || !args[0]) return m.reply(msg)  
 let lang = args[0]
 let text = args.slice(1).join(' ')
@@ -18,7 +18,7 @@ try {
 let lol = await fetch(`https://api.lolhuman.xyz/api/translate/auto/${lang}?apikey=${lolkeysapi}&text=${text}`)
 let loll = await lol.json()
 let result2 = loll.result.translated
-await m.reply('*Traducción:* ' + result2)
+await m.reply('*الترجمة:* ' + result2)
 } catch { 
 await m.reply('*⚠️ 404, حاول مره اخرى*')    
 }}}
